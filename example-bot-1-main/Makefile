@@ -1,6 +1,5 @@
 install:
-	pip install poetry && \
-	-m pip install --upgrade pip
+	poetry install
 
 start:
 	poetry run python example_bot/bot.py
