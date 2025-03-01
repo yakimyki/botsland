@@ -2,7 +2,6 @@ import logging
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.fsm.context import FSMContext
-from aiogram.fsm.storage.memory import MemoryStorage
 import asyncio
 
 TOKEN = token=os.environ.get('TOKEN')
@@ -13,8 +12,7 @@ logging.basicConfig(level=logging.INFO)
 
 
 bot = Bot(TOKEN)
-storage = MemoryStorage()
-dp = Dispatcher(bot, storage=storage)
+dp = Dispatcher(bot)
 
 # Создание клавиатуры с кнопками
 def get_subscription_keyboard():
